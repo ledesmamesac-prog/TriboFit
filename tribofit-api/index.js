@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const pool = require('./db');
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(cors());
@@ -139,4 +140,4 @@ app.get('/workouts/:id', async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('TriboFit API en http://localhost:3000'));
+app.listen(PORT, () => console.log(`TriboFit API en puerto ${PORT}`));
